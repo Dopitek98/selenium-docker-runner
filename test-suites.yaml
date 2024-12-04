@@ -1,0 +1,20 @@
+version: "3"
+services:
+  vendor-portal:
+    image: dopitek2012/selenium-docker:latest
+    environment:
+    - BROWSER=chrome
+    - HUB_HOST=hub
+    - THREAD_COUNT=4
+    - TEST_SUITE=vendor-portal.xml
+    volumes:
+    - ./vendor-portal:/home/selenium-docker/test-output
+  flight-reservation:
+    image: dopitek2012/selenium-docker:latest
+    environment:
+    - BROWSER=firefox
+    - HUB_HOST=hub
+    - THREAD_COUNT=4
+    - TEST_SUITE=flight-reservation.xml
+    volumes:
+    - ./flight-reservation:/home/selenium-docker/test-output
