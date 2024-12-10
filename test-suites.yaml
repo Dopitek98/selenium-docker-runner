@@ -3,7 +3,7 @@ services:
   vendor-portal:
     image: dopitek2012/selenium-docker:latest
     environment:
-    - BROWSER=chrome
+    - BROWSER=${BROWSER}
     - HUB_HOST=hub
     - THREAD_COUNT=4
     - TEST_SUITE=vendor-portal.xml
@@ -12,7 +12,7 @@ services:
   flight-reservation:
     image: dopitek2012/selenium-docker:latest
     environment:
-    - BROWSER=firefox
+    - BROWSER=${BROWSER}
     - HUB_HOST=hub
     - THREAD_COUNT=4
     - TEST_SUITE=flight-reservation.xml
